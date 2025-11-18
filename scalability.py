@@ -6,10 +6,7 @@ from hhcrsp_parser import load_instance
 from test import build_model
 
 def main():
-    if len(sys.argv) < 2:
-        print("Us0: python scalability.py <instances_folder>")
-        return
-    folder = sys.argv[1]
+    folder = "istances"
     tlim = 300
 
     paths = sorted(glob.glob(os.path.join(folder, "*.txt")))
