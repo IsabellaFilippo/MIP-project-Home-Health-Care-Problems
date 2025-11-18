@@ -460,7 +460,6 @@ def main():
     print(f"Status: {status} ({gp.GRB.Status.getname(status) if hasattr(gp.GRB.Status,'getname') else status})")
     if status in (gp.GRB.OPTIMAL, gp.GRB.TIME_LIMIT) and m.SolCount > 0:
         print(f"Obj: {m.ObjVal}")
-        # Print assignment and a simple route per nurse
         y_vars = {(i,k): m.getVarByName(f'y[{i},{k}]').X for i in range(inst.nb_customers) for k in range(inst.nb_nurses) if m.getVarByName(f'y[{i},{k}]') is not None}
         for k in range(inst.nb_nurses):
             assigned = [i for (i,kk),val in y_vars.items() if kk==k and val>0.5]
