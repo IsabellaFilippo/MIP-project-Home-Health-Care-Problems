@@ -450,10 +450,7 @@ def build_model(inst: HHCRSPInstance, weights, time_limit = 300, params: Dict[st
     return m
 
 def main():
-    if len(sys.argv) < 2:
-        print("Uso: python test.py <instance_file>")
-        return
-    inst_path = sys.argv[1]
+    inst_path = "istances/A_10_2_4_6_1_0_0_0.txt"
     inst = load_instance(inst_path)
     print(f"Istanze caricata: {inst.name}")
     print(f"Clienti: {inst.nb_customers}, Infermieri: {inst.nb_nurses}, Servizi: {inst.nb_services}")
