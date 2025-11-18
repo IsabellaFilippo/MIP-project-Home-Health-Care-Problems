@@ -1,6 +1,4 @@
 
-# python scalability.py folder/with/instances
-
 import sys, glob, os, time, csv
 from hhcrsp_parser import load_instance
 from test import build_model
